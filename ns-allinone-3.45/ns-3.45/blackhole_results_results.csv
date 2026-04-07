@@ -1,0 +1,19 @@
+Nodes,MaliciousNodes,Scenario,PDR(%),Throughput(kbps),AvgDelay(ms),PacketsSent,PacketsReceived
+10,0,"Normal AODV (No Attack)",99.6951,32.5464,34.1911,328,327
+10,2,"Cooperative Black Hole (2 malicious nodes)",1.63399,0.048,357.181,306,5
+10,1,"Single Black Hole Attack",29.1139,8.3544,37.858,316,92
+10,3,"Cooperative Black Hole (3 malicious nodes)",1.9544,0.0576,298.894,307,6
+10,4,"Cooperative Black Hole (4 malicious nodes)",2.27273,0.0672,257.032,308,7
+10,1,"Single Black Hole Attack",29.1139,8.3544,37.858,316,92
+10,1,"Single Black Hole Attack",29.1139,8.3544,37.858,316,92
+10,0,"Normal AODV (No Attack)",99.6951,32.5464,34.1911,328,327
+10,2,"Cooperative Black Hole (2 malicious nodes)",1.63399,0.048,357.181,306,5
+10,3,"Cooperative Black Hole (3 malicious nodes)",1.9544,0.0576,298.894,307,6
+10,4,"Cooperative Black Hole (4 malicious nodes)",2.27273,0.0672,257.032,308,7
+10,2,"Cooperative Black Hole (2 malicious nodes)",1.31579,0.0096,5.16317,76,1
+10,3,"Cooperative Black Hole (3 malicious nodes)",1.31579,0.0096,5.16317,76,1
+10,4,"Cooperative Black Hole (4 malicious nodes)",1.31579,0.0096,5.16317,76,1
+10,5,"Cooperative Black Hole (5 malicious nodes)",1.31579,0.0096,5.16317,76,1
+20,6,"Cooperative Black Hole (6 malicious nodes)",1.31579,0.0096,9.16817,76,1
+20,2,"Cooperative Black Hole (2 malicious nodes)",1.31579,0.0096,9.16817,76,1
+20,3,"Cooperative Black Hole (3 malicious nodes)",1.31579,0.0096,9.16817,76,1

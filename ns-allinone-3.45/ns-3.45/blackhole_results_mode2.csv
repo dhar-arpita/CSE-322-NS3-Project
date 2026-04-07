@@ -1,0 +1,6 @@
+MaliciousNodes,Scenario,PDR(%),Throughput(kbps),AvgDelay(ms),Sent,Received
+0,"Normal AODV",0,0,0,463,0
+1,"Single Black Hole",0,0,0,463,0
+2,"Cooperative BH (2 nodes)",0,0,0,463,0
+3,"Cooperative BH (3 nodes)",0,0,0,463,0
+4,"Cooperative BH (4 nodes)",0,0,0,463,0

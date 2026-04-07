@@ -1,0 +1,159 @@
+-- Using default output directory /home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/build
+-- [33mProceeding without cmake-format[0m
+-- [33mdocs: doxygen documentation not enabled due to missing dependencies: doxygen dot dia[0m
+-- Failed to locate sphinx-build executable (missing: SPHINX_EXECUTABLE) 
+-- [33mdocs: sphinx documentation not enabled due to missing dependencies: Sphinx epstopdf pdflatex latexmk convert dvipng dia[0m
+-- Processing contrib/aqm-eval-suite
+-- Processing contrib/lorawan
+-- Processing contrib/netsimulyzer
+-- Processing contrib/nr
+-- Search-free PMI selection requires pyttb and pybind11, and only works on Unix
+-- Processing contrib/oran
+-- ORAN requires sqlite3 library
+-- Processing contrib/quantum
+-- Quantum++ include dir: 
+-- Crypto++ include dir: 
+-- Processing contrib/sip
+-- Processing contrib/uart-net-device
+-- Boost Asynchronous IO (ASIO) have been found.
+-- Processing contrib/wban
+-- Processing src/antenna
+-- Standard library Bessel function has been found
+-- Processing src/aodv
+-- Processing src/aomdv
+-- Processing src/applications
+-- Processing src/bridge
+-- Processing src/brite
+-- [33mSkipping src/brite[0m
+-- Processing src/buildings
+-- Processing src/click
+-- [33mSkipping src/click[0m
+-- Processing src/config-store
+-- Processing src/core
+-- Boost Units have been found.
+-- Processing src/csma
+-- Processing src/csma-layout
+-- Processing src/dsdv
+-- Processing src/dsr
+-- Processing src/energy
+-- Processing src/fd-net-device
+-- Could NOT find PkgConfig (missing: PKG_CONFIG_EXECUTABLE) 
+-- Processing src/flow-monitor
+-- Processing src/internet
+-- Processing src/internet-apps
+-- Processing src/lr-wpan
+-- Processing src/lte
+-- Processing src/mesh
+-- Processing src/mobility
+-- Processing src/netanim
+-- Processing src/network
+-- Processing src/nix-vector-routing
+-- Processing src/olsr
+-- Processing src/openflow
+-- [33mSkipping src/openflow[0m
+-- Processing src/point-to-point
+-- Processing src/point-to-point-layout
+-- Processing src/propagation
+-- Processing src/sixlowpan
+-- Processing src/spectrum
+-- Processing src/stats
+-- Processing src/tap-bridge
+-- Processing src/test
+-- Processing src/topology-read
+-- Processing src/traffic-control
+-- Processing src/uan
+-- Processing src/virtual-net-device
+-- Processing src/wifi
+-- Processing src/wimax
+-- Processing src/zigbee
+-- ---- Summary of ns-3 settings:
+Build profile                 : debug
+Build directory               : /home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/build
+Build with runtime asserts    : [32mON[0m
+Build with runtime logging    : [32mON[0m
+Build version embedding       : OFF (not requested)
+BRITE Integration             : [31mOFF (Missing headers: "Brite.h" and missing libraries: "brite")[0m
+DES Metrics event collection  : OFF (not requested)
+DPDK NetDevice                : OFF (not requested)
+Emulation FdNetDevice         : [32mON[0m
+Examples                      : [32mON[0m
+File descriptor NetDevice     : [32mON[0m
+GNU Scientific Library (GSL)  : [31mOFF (GSL was not found)[0m
+GtkConfigStore                : [31mOFF (Harfbuzz is required by GTK3 and was not found)[0m
+LibXml2 support               : [31mOFF (LibXML2 was not found)[0m
+MPI Support                   : OFF (not requested)
+ns-3 Click Integration        : [31mOFF (Missing headers: "simclick.h" and missing libraries: "nsclick click")[0m
+ns-3 OpenFlow Integration     : [31mOFF (Missing headers: "openflow.h" and missing libraries: "openflow")[0m
+Netmap emulation FdNetDevice  : [31mOFF (missing dependency)[0m
+PyViz visualizer              : [31mOFF (Python Bindings are disabled)[0m
+Python Bindings               : OFF (not requested)
+SQLite support                : [31mOFF (Missing headers: "sqlite3.h" and missing libraries: "sqlite3")[0m
+Eigen3 support                : [31mOFF (Eigen was not found)[0m
+Tap Bridge                    : [32mON[0m
+Tap FdNetDevice               : [32mON[0m
+Tests                         : [32mON[0m
+
+
+Modules configured to be built:
+antenna                   aodv                      aomdv                     
+applications              aqm-eval-suite            bridge                    
+buildings                 config-store              core                      
+csma                      csma-layout               dsdv                      
+dsr                       energy                    fd-net-device             
+flow-monitor              internet                  internet-apps             
+lorawan                   lr-wpan                   lte                       
+mesh                      mobility                  netanim                   
+netsimulyzer              network                   nix-vector-routing        
+nr                        olsr                      point-to-point            
+point-to-point-layout     propagation               sip                       
+sixlowpan                 spectrum                  stats                     
+tap-bridge                test                      topology-read             
+traffic-control           uan                       uart-net-device           
+virtual-net-device        wban                      wifi                      
+wimax                     zigbee                    
+
+Modules that cannot be built:
+brite                     click                     mpi                       
+openflow                  oran                      quantum                   
+visualizer                
+
+
+-- Configuring done (2.0s)
+-- Generating done (2.1s)
+-- Build files have been written to: /home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/cmake-cache
+[  0%] Building CXX object scratch/CMakeFiles/scratch_aomdv-comprehensive-test.dir/aomdv-comprehensive-test.cc.o
+[  0%] Linking CXX executable /home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/build/scratch/ns3.45-aomdv-comprehensive-test-debug
+
+===========================================================
+  AOMDV COMPREHENSIVE CORNER CASE TEST
+===========================================================
+1. Multipath (Diamond Topology embedded)
+2. Mobility (Random Walk)
+3. Node Failure (Simulated breakdown)
+4. Multiple Flows (Congestion)
+===========================================================
+Starting Simulation...
+
+[!] SIMULATING LINK FAILURE at 40s
+    Disconnecting Node 1 <-> Node 0
+
+---------------------------------------------------------------------------
+  RESULTS ANALYSIS
+---------------------------------------------------------------------------
+Flow 1 (10.1.1.1 -> 10.1.1.4)
+  Tx: 76  Rx: 0
+  Lost: 76
+  PDR: 0 %
+  Status: FAIL
+
+Flow 2 (10.1.1.20 -> 10.1.1.5)
+  Tx: 100  Rx: 0
+  Lost: 100
+  PDR: 0 %
+  Status: FAIL
+
+===========================================================
+  FINAL VERDICT
+===========================================================
+Aggregate PDR: 0 %
+✗ POOR: Significant packet loss detected.

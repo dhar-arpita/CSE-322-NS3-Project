@@ -1,0 +1,19 @@
+[  0%] Building CXX object src/aomdv/CMakeFiles/aomdv.dir/model/aomdv-routing-protocol.cc.o
+[01m[K/home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/src/aomdv/model/aomdv-routing-protocol.cc:[m[K In member function ‘[01m[Kvoid ns3::aomdv::RoutingProtocol::[01;32m[KRecvReply[m[K(ns3::Ptr<ns3::Packet>, ns3::Ipv4Address, ns3::Ipv4Address)[m[K’:
+[01m[K/home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/src/aomdv/model/aomdv-routing-protocol.cc:1625:76:[m[K [01;35m[Kwarning: [m[K‘[01m[Kthis[m[K’ pointer is null [[01;35m[K-Wnonnull[m[K]
+ 1625 |                   forwardPath->SetExpire (std::max ([01;35m[KforwardPath->GetExpire ()[m[K, Simulator::Now() + rrepHeader.GetLifeTime ()));
+      |                                                     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/src/aomdv/model/aomdv-routing-protocol.h:31[m[K,
+                 from [01m[K/home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/src/aomdv/model/aomdv-routing-protocol.cc:4[m[K:
+[01m[K/home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/src/aomdv/model/aomdv-rtable.h:109:10:[m[K [01;36m[Knote: [m[Kin a call to non-static member function ‘[01m[Kns3::Time ns3::aomdv::RoutingTableEntry::Path::[01;32m[KGetExpire[m[K() const[m[K’
+  109 |     Time [01;36m[KGetExpire[m[K () const { return m_expire - Simulator::Now (); }
+      |          [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/src/aomdv/model/aomdv-routing-protocol.cc:1625:42:[m[K [01;35m[Kwarning: [m[K‘[01m[Kthis[m[K’ pointer is null [[01;35m[K-Wnonnull[m[K]
+ 1625 |                   [01;35m[KforwardPath->SetExpire (std::max (forwardPath->GetExpire (), Simulator::Now() + rrepHeader.GetLifeTime ()))[m[K;
+      |                   [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/src/aomdv/model/aomdv-rtable.h:108:10:[m[K [01;36m[Knote: [m[Kin a call to non-static member function ‘[01m[Kvoid ns3::aomdv::RoutingTableEntry::Path::[01;32m[KSetExpire[m[K(ns3::Time)[m[K’
+  108 |     void [01;36m[KSetExpire[m[K (Time et) { m_expire = et + Simulator::Now (); }
+      |          [01;36m[K^~~~~~~~~[m[K
+[  0%] Linking CXX shared library /home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/build/lib/libns3.45-aomdv-optimized.so
+Finished executing the following commands:
+/usr/bin/cmake --build /home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/cmake-cache -j 15 --target aomdv

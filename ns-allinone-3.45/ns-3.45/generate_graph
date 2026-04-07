@@ -1,0 +1,71 @@
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.interpolate import make_interp_spline
+
+# ===== CSV Data (change these values when you rerun) =====
+data = {
+    'none':       {'speed': [0,5,10,15,20], 'pdr': [95.881,94.2125,92.4816,92.4023,90.5467], 'throughput': [35.7912,32.4864,34.4952,32.94,30.3264], 'ro': [20633,24099,23533,19858,18196], 'nrl': [10.452,13.0233,16.7358,17.0216,17.3846]},
+    'blackhole':  {'speed': [0,5,10,15,20], 'pdr': [42.3796,33.3144,31.9547,28.9462,28.6261], 'throughput': [25.532,27.9504,27.432,23.9976,24.2568], 'ro': [12727,10588,9741,9523,9425], 'nrl': [22.2203,25.1376,25.6071,24.072,26.626]},
+    'smartblack': {'speed': [0,5,10,15,20], 'pdr': [84.136,93.7677,91.2748,89.5751,77.2805], 'throughput': [32.076,35.748,34.7976,34.1496,29.4624], 'ro': [18946,16360,15962,18521,18495], 'nrl': [12.7582,15.9275,9.90813,11.7147,15.7588]},
+    'grayhole':   {'speed': [0,5,10,15,20], 'pdr': [47.0538,59.9518,56.1303,55.3654,54.7592], 'throughput': [24.1264,26.2872,29.7864,25.6824,24.6888], 'ro': [14515,13861,13386,12014,12519], 'nrl': [15.1942,14.8546,16.3328,19.7864,18.4523]},
+    'smartgray':  {'speed': [0,5,10,15,20], 'pdr': [94.745,92.238,86.8527,87.6289,86.5099], 'throughput': [34.2144,35.1648,31.968,33.0264,30.6936], 'ro': [17267,18910,20847,19929,17757], 'nrl': [10.9009,11.6155,15.0858,18.034,18.9036]},
+}
+
+# ===== Styling =====
+style_bh = {
+    'none':       {'color': '#2176FF', 'marker': 'D', 'label': 'AODV (No Attack)'},
+    'blackhole':  {'color': '#E83535', 'marker': 's', 'label': 'Black-Hole'},
+    'smartblack': {'color': '#33A532', 'marker': '^', 'label': 'Smart Black-Hole'},
+}
+style_gh = {
+    'none':       {'color': '#2176FF', 'marker': 'D', 'label': 'AODV (No Attack)'},
+    'grayhole':   {'color': '#E83535', 'marker': 's', 'label': 'Gray-Hole (50%)'},
+    'smartgray':  {'color': '#33A532', 'marker': '^', 'label': 'Smart Gray-Hole (50%)'},
+}
+
+# Smooth spline
+def smooth(x, y):
+    x, y = np.array(x, dtype=float), np.array(y, dtype=float)
+    xnew = np.linspace(x.min(), x.max(), 200)
+    return xnew, make_interp_spline(x, y, k=3)(xnew)
+
+# Single graph generator
+def make_graph(attacks, styles, metric, ylabel, title, filename, ylim=None):
+    fig, ax = plt.subplots(figsize=(8, 5.5))
+    for atk in attacks:
+        s, d = styles[atk], data[atk]
+        xs, ys = smooth(d['speed'], d[metric])
+        ax.plot(xs, ys, color=s['color'], linestyle='--', linewidth=2, label=s['label'])
+        ax.plot(d['speed'], d[metric], color=s['color'], marker=s['marker'],
+                markersize=9, linewidth=0, markeredgecolor='white', markeredgewidth=1.2, zorder=5)
+    ax.set_xlabel('Mobility Speed (m/s)', fontsize=12, fontweight='bold')
+    ax.set_ylabel(ylabel, fontsize=12, fontweight='bold')
+    ax.set_title(title, fontsize=13, fontweight='bold', pad=12)
+    ax.legend(fontsize=10, loc='best', framealpha=0.9)
+    ax.grid(True, alpha=0.25)
+    ax.set_xticks([0, 5, 10, 15, 20])
+    if ylim: ax.set_ylim(ylim)
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    fig.tight_layout()
+    fig.savefig(filename, dpi=150, bbox_inches='tight')
+    plt.close(fig)
+    print(f"Saved: {filename}")
+
+# ===== Group 1: AODV vs Blackhole vs Smart Blackhole (4 graphs) =====
+bh = ['none', 'blackhole', 'smartblack']
+make_graph(bh, style_bh, 'pdr',        'Packet Delivery Rate (%)',    'PDR vs Speed (Black-Hole Group)',               '/home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/graphs/bh_pdr.png',              ylim=(0,105))
+make_graph(bh, style_bh, 'throughput',  'Average Throughput (Kbps)',   'Throughput vs Speed (Black-Hole Group)',         '/home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/graphs/bh_throughput.png')
+make_graph(bh, style_bh, 'ro',          'Routing Overhead (packets)',  'Routing Overhead vs Speed (Black-Hole Group)',  '/home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/graphs/bh_routing_overhead.png')
+make_graph(bh, style_bh, 'nrl',         'Normalized Routing Load',     'NRL vs Speed (Black-Hole Group)',               '/home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/graphs/bh_nrl.png')
+
+# ===== Group 2: AODV vs Grayhole vs Smart Grayhole (4 graphs) =====
+gh = ['none', 'grayhole', 'smartgray']
+make_graph(gh, style_gh, 'pdr',        'Packet Delivery Rate (%)',    'PDR vs Speed (Gray-Hole Group)',                '/home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/graphs/gh_pdr.png',              ylim=(0,105))
+make_graph(gh, style_gh, 'throughput',  'Average Throughput (Kbps)',   'Throughput vs Speed (Gray-Hole Group)',          '/home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/graphs/gh_throughput.png')
+make_graph(gh, style_gh, 'ro',          'Routing Overhead (packets)',  'Routing Overhead vs Speed (Gray-Hole Group)',   '/home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/graphs/gh_routing_overhead.png')
+make_graph(gh, style_gh, 'nrl',         'Normalized Routing Load',     'NRL vs Speed (Gray-Hole Group)',                '/home/arpita/Desktop/Term_3-2/CSE-322-Computer-Networks-Sessional/NS3_Project/ns-allinone-3.45/ns-3.45/graphs/gh_nrl.png')
+
+print("\nDone! 8 graphs generated:")
+print("  bh_pdr.png, bh_throughput.png, bh_routing_overhead.png, bh_nrl.png")
+print("  gh_pdr.png, gh_throughput.png, gh_routing_overhead.png, gh_nrl.png")

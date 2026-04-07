@@ -1,0 +1,11 @@
+Nodes,Scenario,PDR(%),Throughput(kbps),AvgDelay(ms),Sent,Received
+10,Normal AODV,0,0,0,175,0
+10,Black Hole AODV,0,0,0,175,0
+20,Normal AODV,0,0,0,175,0
+20,Black Hole AODV,0,0,0,175,0
+30,Normal AODV,0,0,0,175,0
+30,Black Hole AODV,0,0,0,175,0
+40,Normal AODV,0,0,0,175,0
+40,Black Hole AODV,0,0,0,175,0
+50,Normal AODV,0,0,0,175,0
+50,Black Hole AODV,0,0,0,175,0
