@@ -1,9 +1,0 @@
-Simulation Started...
-----------------------------------
-       AODV NORMAL RESULTS        
-----------------------------------
-Total Packets Sent    : 549
-Total Packets Received: 549
-Packet Delivery Ratio : 100 %
-Throughput            : 231.019 Kbps
-----------------------------------
